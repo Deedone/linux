@@ -182,6 +182,10 @@
 		/delete-node/rfso@ffe89000;
 		/delete-node/rfso@ffe8a000;
 
+		mmc0: mmc@ee140000 {
+			iommus = <&ipmmu_ds0 32>;
+		};
+
 		rt_dmac0: dma-controller@ffd60000 {
 			status = "okay";
 		};
