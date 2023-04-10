@@ -214,6 +214,22 @@
 			status = "okay";
 		};
 
+		pciec0: pcie@e65d0000 {
+			dma-ranges = <0x42000000 0 0x00000000 0 0x00000000 1 0x00000000>;
+			iommus = <&ipmmu_hc 32>;
+			iommu-map = <0x0 &ipmmu_hc 32 0x10000>,
+						<0x10000 &ipmmu_hc 32 0x10000>;
+			iommu-map-mask = <0x0>;
+		};
+
+		pciec1: pcie@e65d8000 {
+			dma-ranges = <0x42000000 0 0x00000000 0 0x00000000 1 0x00000000>;
+			iommus = <&ipmmu_hc 48>;
+			iommu-map = <0x0 &ipmmu_hc 48 0x10000>,
+						<0x10000 &ipmmu_hc 48 0x10000>;
+			iommu-map-mask = <0x0>;
+		};
+
 		prr: chipid@fff00044 {
 			status = "okay";
 		};
