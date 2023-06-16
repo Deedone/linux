@@ -113,7 +113,9 @@ static const struct cpg_core_clk r8a779f0_core_clks[] __initconst = {
 	DEF_FIXED("sasyncperd2", R8A779F0_CLK_SASYNCPERD2, R8A779F0_CLK_SASYNCPER, 2, 1),
 	DEF_FIXED("sasyncperd4", R8A779F0_CLK_SASYNCPERD4, R8A779F0_CLK_SASYNCPER, 4, 1),
 
+#ifndef CONFIG_XEN
 	DEF_GEN4_SD("sd0",	R8A779F0_CLK_SD0,	CLK_SDSRC,	0x870),
+#endif
 	DEF_DIV6P1("mso",       R8A779F0_CLK_MSO,       CLK_PLL5_DIV4, 0x087C),
 
 	DEF_GEN4_OSC("osc",	R8A779F0_CLK_OSC,	CLK_EXTAL,	8),
@@ -149,7 +151,9 @@ static const struct mssr_mod_clk r8a779f0_mod_clks[] __initconst = {
 	DEF_MOD("scif3",	704,	R8A779F0_CLK_SASYNCPERD4),
 #endif
 	DEF_MOD("scif4",	705,	R8A779F0_CLK_SASYNCPERD4),
+#ifndef CONFIG_XEN
 	DEF_MOD("sdhi0",	706,	R8A779F0_CLK_SD0),
+#endif
 	DEF_MOD("sydm1",	709,	R8A779F0_CLK_S0D3),
 	DEF_MOD("sydm2",	710,	R8A779F0_CLK_S0D3),
 	DEF_MOD("tmu0",		713,	R8A779F0_CLK_S0D6_RT),
